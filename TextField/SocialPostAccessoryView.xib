@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SocialPostAccessoryView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="68"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oZY-ec-8q2">
+                    <rect key="frame" x="240" y="12" width="68" height="30"/>
+                    <color key="backgroundColor" red="0.14901960784313725" green="0.60392156862745094" blue="0.78431372549019607" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="bvo-Gb-8jZ"/>
+                        <constraint firstAttribute="width" constant="68" id="m7w-4z-10o"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                    <state key="normal" title="Post">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="postButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="lXB-Mj-aQY"/>
+                    </connections>
+                </button>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Add a comment" translatesAutoresizingMaskIntoConstraints="NO" id="55N-NO-akh">
+                    <rect key="frame" x="12" y="7" width="216" height="54"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="216" id="ZmO-dC-WVI"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    <connections>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="AJn-4M-24P"/>
+                    </connections>
+                </textView>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="256" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P7y-od-Zlh" userLabel="Label - Character Count">
+                    <rect key="frame" x="264" y="44" width="42" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="HCx-rB-c4b"/>
+                        <constraint firstAttribute="width" constant="42" id="Mre-NI-MhX"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="55N-NO-akh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="7" id="AqD-g4-xHY"/>
+                <constraint firstItem="oZY-ec-8q2" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="12" id="KbQ-Cx-Qb9"/>
+                <constraint firstItem="55N-NO-akh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="12" id="Lnr-cZ-LKo"/>
+                <constraint firstItem="P7y-od-Zlh" firstAttribute="top" secondItem="oZY-ec-8q2" secondAttribute="bottom" constant="2" id="M9x-Td-qWP"/>
+                <constraint firstItem="oZY-ec-8q2" firstAttribute="leading" secondItem="55N-NO-akh" secondAttribute="trailing" constant="12" id="aD3-Om-OZn"/>
+                <constraint firstItem="P7y-od-Zlh" firstAttribute="trailing" secondItem="oZY-ec-8q2" secondAttribute="trailing" constant="-2" id="ffd-v7-Rwl"/>
+                <constraint firstAttribute="trailing" secondItem="oZY-ec-8q2" secondAttribute="trailing" constant="12" id="gos-II-o07"/>
+                <constraint firstItem="55N-NO-akh" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="xhY-CC-4JD"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="charactersRemainingLabel" destination="P7y-od-Zlh" id="z6l-K0-By5"/>
+                <outlet property="postButton" destination="oZY-ec-8q2" id="HAt-Uk-lTa"/>
+                <outlet property="textView" destination="55N-NO-akh" id="ATf-sA-d4T"/>
+            </connections>
+        </view>
+    </objects>
+</document>
